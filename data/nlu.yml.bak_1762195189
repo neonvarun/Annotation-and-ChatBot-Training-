@@ -1,0 +1,9 @@
+version: '2.0'
+nlu:
+- intent: book_restaurant
+  examples: "|\n  - I want to book a table for 2 people at Italian Garden restaurant\
+    \ tomorrow at 7pm\n  - I want to book a ta[b](NUMBER)le for 2 people at Italian\
+    \ Garden restaurant tomorrow at 7pm"
+- intent: order_food
+  examples: "|\n  - give me two plates of [biriayn](FOOD)i\n  - give me two plates\
+    \ of [biriayn](FOOD)i"

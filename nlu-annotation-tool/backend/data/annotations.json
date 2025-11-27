@@ -1,0 +1,40 @@
+[
+  {
+    "text": "I want to book a table for 2 people at Italian Garden restaurant tomorrow at 7pm",
+    "intent": "book_restaurant",
+    "entities": []
+  },
+  {
+    "text": "I want to book a table for 2 people at Italian Garden restaurant tomorrow at 7pm",
+    "intent": "book_restaurant",
+    "entities": [
+      {
+        "start": 19,
+        "end": 20,
+        "label": "NUMBER"
+      }
+    ]
+  },
+  {
+    "text": "give me two plates of biriayni",
+    "intent": "order_food",
+    "entities": [
+      {
+        "start": 22,
+        "end": 29,
+        "label": "FOOD"
+      }
+    ]
+  },
+  {
+    "text": "give me two plates of biriayni",
+    "intent": "order_food",
+    "entities": [
+      {
+        "start": 22,
+        "end": 29,
+        "label": "FOOD"
+      }
+    ]
+  }
+]

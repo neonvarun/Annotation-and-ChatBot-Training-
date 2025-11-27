@@ -1,0 +1,246 @@
+/* Workspace Page Enhanced Styles */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #0a0e27;
+    background-image: 
+        linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(10, 14, 39, 0.95) 30%, rgba(245, 87, 108, 0.18) 70%, rgba(26, 31, 58, 0.95) 100%),
+        url('ecommerce-bg.jpg');
+    background-size: 250% 250%, cover;
+    background-position: 0% 50%, center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+    animation: bgShift 25s ease-in-out infinite;
+}
+
+@keyframes bgShift {
+    0%, 100% { background-position: 0% 50%, center; }
+    50% { background-position: 100% 50%, center; }
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(245, 87, 108, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(79, 172, 254, 0.1) 0%, transparent 50%);
+    background-size: 100% 100%;
+    animation: glowPulse 10s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes glowPulse {
+    0%, 100% { 
+        opacity: 0.5; 
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 0.7; 
+        transform: scale(1.03);
+    }
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: 
+        radial-gradient(circle at 30% 40%, rgba(102, 126, 234, 0.15) 0%, transparent 15%),
+        radial-gradient(circle at 70% 60%, rgba(245, 87, 108, 0.12) 0%, transparent 15%),
+        radial-gradient(circle at 50% 80%, rgba(0, 242, 254, 0.12) 0%, transparent 15%);
+    background-size: 50% 50%;
+    animation: floatingOrbs 30s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes floatingOrbs {
+    0%, 100% { 
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.4;
+    }
+    50% { 
+        transform: translate(10px, -10px) rotate(180deg);
+        opacity: 0.6;
+    }
+}
+
+.card {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem;
+    position: relative;
+    z-index: 10;
+}
+
+.card > * {
+    position: relative;
+    z-index: 11;
+}
+
+.card h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2.5rem;
+    color: var(--text-light);
+}
+
+#list {
+    margin: 2rem 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.ws-item {
+    padding: 1.5rem;
+    margin: 1rem 0;
+    background: rgba(17, 25, 50, 0.6);
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.ws-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.ws-item:hover::before {
+    left: 100%;
+}
+
+.ws-item:hover {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 25px rgba(102, 126, 234, 0.5);
+    transform: translateX(5px);
+}
+
+.ws-item span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-light);
+    position: relative;
+    z-index: 12;
+}
+
+.ws-item button {
+    padding: 0.75rem 2rem;
+    background: var(--success-gradient);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 12;
+}
+
+.ws-item button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(79, 172, 254, 0.6);
+}
+
+.card hr {
+    margin: 2rem 0;
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-purple), transparent);
+}
+
+.workspace-input-container {
+    display: flex;
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.card input {
+    padding: 1rem 1.5rem;
+    flex: 1;
+    background: rgba(17, 25, 50, 0.6);
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    border-radius: 15px;
+    color: var(--text-light);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 12;
+}
+
+.card input:focus {
+    outline: none;
+    background: rgba(17, 25, 50, 0.8);
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+}
+
+.card input::placeholder {
+    color: var(--text-muted);
+}
+
+#create-ws {
+    padding: 1rem 2rem;
+    background: var(--primary-gradient);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 12;
+}
+
+#create-ws:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(102, 126, 234, 0.6), 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Scrollbar for workspace list */
+#list::-webkit-scrollbar {
+    width: 8px;
+}
+
+#list::-webkit-scrollbar-track {
+    background: rgba(17, 25, 50, 0.3);
+    border-radius: 10px;
+}
+
+#list::-webkit-scrollbar-thumb {
+    background: var(--primary-gradient);
+    border-radius: 10px;
+}
+
+#list::-webkit-scrollbar-thumb:hover {
+    box-shadow: 0 0 10px var(--neon-purple);
+}
+

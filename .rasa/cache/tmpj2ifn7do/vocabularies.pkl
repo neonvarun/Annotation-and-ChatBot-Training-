@@ -1,0 +1,1 @@
+{"text": {"i": 2, "want": 10, "to": 9, "have": 1, "some": 6, "suggestions": 7, "on": 5, "jean": 3, "materials": 4, "for": 0, "summer": 8}, "intent": {"suggestion": 0}, "response": null, "action_name": null, "action_text": null, "intent_response_key": null}

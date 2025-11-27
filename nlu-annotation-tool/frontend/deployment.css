@@ -1,0 +1,182 @@
+/* frontend/deployment.css */
+
+:root {
+    --primary-color: #0d6efd;
+    --success-color: #198754;
+    --info-color: #0dcaf0;
+    --warning-color: #ffc107;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+}
+
+body {
+    background-color: var(--light-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--dark-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+h4 {
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.card {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    background-color: var(--light-color);
+    border-bottom: 1px solid #dee2e6;
+    padding: 1rem;
+}
+
+.card-header h5 {
+    margin: 0;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.deployment-card {
+    text-align: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.deployment-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #f0f4fa 0%, #b8d4e8 100%);
+}
+
+.pipeline-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.deployment-card .card-title {
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.deployment-card .card-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.btn {
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+}
+
+.alert {
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.alert-info {
+    background-color: #cfe2ff;
+    border-color: #b6d4fe;
+    color: #084298;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    border-color: #ffecb5;
+    color: #997404;
+}
+
+.modal-header {
+    background-color: var(--light-color);
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.text-muted {
+    color: #6c757d;
+}
+
+.text-success {
+    color: var(--success-color);
+}
+
+.text-warning {
+    color: var(--warning-color);
+}
+
+/* Pipeline flow visualization */
+.pipeline-step {
+    position: relative;
+    padding: 2rem 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 2px solid #dee2e6;
+}
+
+.pipeline-step.active {
+    border-color: var(--success-color);
+    background-color: #f1f8f4;
+}
+
+.pipeline-step.completed {
+    border-color: var(--success-color);
+    background-color: #f1f8f4;
+}
+
+.pipeline-arrow {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin: 1rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pipeline-icon {
+        font-size: 2rem;
+    }
+
+    .deployment-card {
+        margin-bottom: 1rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .row {
+        --bs-gutter-x: 0.75rem;
+    }
+}

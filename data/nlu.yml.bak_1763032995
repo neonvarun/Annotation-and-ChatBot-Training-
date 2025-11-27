@@ -1,0 +1,5 @@
+version: "3.1"
+nlu:
+- intent: suggestion
+  examples: |
+    - i w[ant](Cloth) to have some suggestions on jean materials for summer

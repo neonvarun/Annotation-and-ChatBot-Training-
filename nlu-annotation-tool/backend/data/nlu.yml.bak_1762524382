@@ -1,0 +1,5 @@
+version: "3.1"
+nlu:
+- intent: get_person_info
+  examples: |
+    - [Barack Obama](PERSON) was born in Hawaii and served as the 44th President of the United States.

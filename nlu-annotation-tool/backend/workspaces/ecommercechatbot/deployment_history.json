@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "last_deployed": "2025-11-13T16:36:01.131652",
+  "state": "deployed",
+  "message": "Container nlu-tool-container2 is running on port 8080:5000",
+  "history": [
+    {
+      "timestamp": "2025-11-13T16:36:01.131652",
+      "image_name": "nlu-tool:statustest",
+      "container_name": "nlu-tool-container2",
+      "container_id": "43c586f17f98",
+      "port_mapping": "8080:5000",
+      "status": "success"
+    }
+  ]
+}

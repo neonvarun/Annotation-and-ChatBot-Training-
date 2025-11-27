@@ -1,0 +1,13 @@
+# config.yml (minimal NLU pipeline suitable for training intents + entities)
+language: en
+pipeline:
+- name: WhitespaceTokenizer
+- name: RegexFeaturizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+- name: DIETClassifier
+- name: EntitySynonymMapper
+policies: []
+assistant_id: 20251030-010947-diachronic-pica
+# This is a minimal config. For a more advanced configuration, please refer to:
+# https://rasa.com/docs/rasa/how-to-configure-your-rasa-model

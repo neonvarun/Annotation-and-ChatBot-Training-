@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Futuristic Interface</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="futuristic-theme.css">
+    <link rel="stylesheet" href="admin_dashboard.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <span class="navbar-brand">NLU Tool - Module 4: Admin Dashboard</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Annotation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="active_learning.html">Active Learning</a></li>
+                    <li class="nav-item"><a class="nav-link" href="deployment.html">Deployment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="auth.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Admin Dashboard</h2>
+                <div class="d-flex align-items-center">
+                    <p class="text-muted mb-0 me-3">Workspace: <strong id="workspace-display">Loading...</strong></p>
+                    <div>
+                        <select id="workspace-select" class="form-select form-select-sm" style="display:inline-block; width:auto;">
+                            <option value="">Select workspace...</option>
+                        </select>
+                        <button id="workspace-load" class="btn btn-sm btn-secondary ms-2">Load</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <div class="card stat-card">
+                    <div class="card-body">
+                        <h6 class="card-title text-muted">Total Annotations</h6>
+                        <h3 id="stat-annotations" class="stat-value">--</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stat-card">
+                    <div class="card-body">
+                        <h6 class="card-title text-muted">Entity Types</h6>
+                        <h3 id="stat-entities" class="stat-value">--</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stat-card">
+                    <div class="card-body">
+                        <h6 class="card-title text-muted">Intent Types</h6>
+                        <h3 id="stat-intents" class="stat-value">--</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stat-card">
+                    <div class="card-body">
+                        <h6 class="card-title text-muted">Uncertain Samples</h6>
+                        <h3 id="stat-uncertain" class="stat-value">--</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stat-card">
+                    <div class="card-body">
+                        <h6 class="card-title text-muted">Model Accuracy</h6>
+                        <h3 id="stat-accuracy" class="stat-value">--</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Model Health -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Model Health</h5>
+                    </div>
+                    <div class="card-body" id="model-health-container">
+                        Loading model health...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Users Management -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Registered Users</h5>
+                    </div>
+                    <div class="card-body" id="users-container">
+                        Loading users...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Active Learning Actions -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Quick Actions</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-primary" id="go-to-active-learning">
+                                Go to Active Learning
+                            </button>
+                            <button type="button" class="btn btn-success" id="retrain-spacy">
+                                Retrain Spacy Model
+                            </button>
+                            <button type="button" class="btn btn-info" id="retrain-rasa">
+                                Retrain Rasa Model
+                            </button>
+                            <button type="button" class="btn btn-warning" id="retrain-both-models">
+                                Retrain All Models
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed Stats -->
+        <div class="row mt-4 mb-5">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Detailed Statistics</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>Entity Types:</h6>
+                                <div id="entity-list" class="list-group">
+                                    <small class="text-muted">None</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>Intent Types:</h6>
+                                <div id="intent-list" class="list-group">
+                                    <small class="text-muted">None</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="notification-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Notification</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body" id="notification-message">
+                <!-- Message will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="admin_dashboard.js"></script>
+</body>
+</html>

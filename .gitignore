@@ -1,0 +1,17 @@
+# Python venv
+env/
+venv/
+rasaenv/
+node_modules/
+
+# Bytecode
+__pycache__/
+*.pyc
+
+# Rasa
+models/
+results/
+logs/
+
+# VSCode
+.vscode/

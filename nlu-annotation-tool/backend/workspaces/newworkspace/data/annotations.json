@@ -1,0 +1,26 @@
+[
+  {
+    "text": "i want to have some suggestions on jean materials for summer",
+    "intent": "suggestion",
+    "entities": [
+      {
+        "start": 3,
+        "end": 6,
+        "label": "Cloth"
+      }
+    ],
+    "workspace_id": "newworkspace"
+  },
+  {
+    "text": "",
+    "intent": "",
+    "entities": [],
+    "workspace_id": "newworkspace"
+  },
+  {
+    "text": "",
+    "intent": "",
+    "entities": [],
+    "workspace_id": "newworkspace"
+  }
+]

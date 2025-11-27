@@ -1,0 +1,1 @@
+{"text": {"barack": 3, "obama": 7, "was": 14, "born": 4, "in": 6, "hawaii": 5, "and": 1, "served": 10, "as": 2, "the": 12, "44th": 0, "president": 9, "of": 8, "united": 13, "states": 11}, "intent": {"get_person_info": 0}, "response": null, "action_name": null, "action_text": null, "intent_response_key": null}
